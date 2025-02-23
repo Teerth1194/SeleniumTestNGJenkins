@@ -22,7 +22,7 @@ pipeline {
                 // sh "mvn clean test-Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                bat "mvn clean test -DBROWSER=chrome -DsuiteXmlFile=${SUITE}.xml"
+                bat "mvn clean test -DBROWSER=${BROWSER} -DsuiteXmlFile=${SUITE}.xml"
             }
         }
     }
