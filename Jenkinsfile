@@ -7,7 +7,8 @@ pipeline {
     // }
 
     parameters {
-        choice choices: ['Production', 'Staging'], description: 'Select an environment on which you want to run the test', name: 'Select Environment'
+        choice choices: ['Production', 'Staging'], description: 'Select an environment on which you want to run the test', name: 'ENV'
+        choice choices: ['AllTest', 'DriverTest', 'EnvTest', 'UrlTest'], name: 'SUITE'
     }
 
     stages {
@@ -20,7 +21,7 @@ pipeline {
                 // sh "mvn clean test-Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                bat "mvn clean test -DsuiteXmlFile=DriverTest.xml"
+                bat "mvn clean test -DsuiteXmlFile=${SUITE}.xml"
             }
         }
     }
