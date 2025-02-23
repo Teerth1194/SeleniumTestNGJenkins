@@ -3,7 +3,7 @@
 <suite name="Base Test Suite">
     <test verbose="2" preserve-order="true" name="Base Test">
         <classes>
-            <class name="Basetest"/>
+            <class name="AllTest"/>
         </classes>
     </test>
 </suite>
